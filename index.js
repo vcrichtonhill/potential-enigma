@@ -3,6 +3,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 // const { type } = require('os');
 const generateMarkdown = require('./Develop/utils/generateMarkdown.js');
+const path = require('path');
 
 // TODO: Create an array of questions for user input
 const questions = () => {
@@ -41,7 +42,7 @@ const questions = () => {
             type: 'checkbox',
             name: 'license',
             message: 'Which license should your project have?',
-            choices: ['']
+            choices: ['Apache 2.0']
         },
         {
             type: 'input',
@@ -57,26 +58,18 @@ const questions = () => {
 }
 
 // write README file
-function writeToFile(data) {
-    fs.writeFile('README.md', data => {
-        console.log("Your README has been created!")
-    })
+function writeToFile(fileName, data) {
+    fs.writeFileSync(path.join(__dirname, "/dist/", fileName), data)
 }
-
-questions()
-.then(answers => {
-    return generateMarkdown(answers);
-})
-.then(data => {
-    return writeToFile(data);
-})
-.catch(err => {
-    console.log(err);
-});
 
 
 // initialize app
-function init() {}
+function init() {
+    questions()
+    .then(answers => {
+        writeToFile("README.md", generateMarkdown(answers))
+    })
+}
 
 // Function call to initialize app
 init();
