@@ -21,7 +21,7 @@
   Apache 2.0
 
   ## Contribution
-  x
+  
 
   ## Testing
   x
@@ -30,7 +30,7 @@
   Please reach out to me at x with any questions. You can see more of my projects at x
 
   
-    Copyright 2022 x
+    Copyright 2022 by x
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
