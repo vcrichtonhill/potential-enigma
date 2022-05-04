@@ -91,7 +91,7 @@ function generateMarkdown(data) {
   ${data.test}
 
   ## Questions
-  Please reach out to me at ${data.email} with any questions. You can see more of my projects at ${data.username}
+  Please reach out to me at ${data.email} with any questions. You can see more of my projects at github.com/${data.username}
 
   ${renderLicenseSection(data.license, data.username)}
 `;
